@@ -8,8 +8,8 @@ The sample application has the ability to connect to a databse. We need to provi
 Vagrant is capable of running two or more virtual machines at once with different confiurations.
 ### Tasks
 Research how to create a multi machine vagrant environment
-
-``Vagrant.configure("2") do |config|
+```
+Vagrant.configure("2") do |config|
   config.vm.define "app" do |app|
     app.vm.box = "ubuntu/xenial64"
     app.vm.network "private_network", ip: "192.168.10.100"
@@ -22,8 +22,8 @@ Research how to create a multi machine vagrant environment
     app.vm.network "private_network", ip: "192.168.10.101"
     app.hostsupdater.aliases = ["development.local"]
     app.vm.provision "shell", path: "environment/db/provision.sh"
-  end``
-
+  end
+```
 Add a second virtual machine called "db" to your Vagrant file
 Configure the db machine with a different IP from the app
 Provision the db machine with a MongoDB database
