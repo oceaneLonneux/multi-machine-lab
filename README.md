@@ -11,7 +11,8 @@ Research how to create a multi machine vagrant environment
 Add a second virtual machine called "db" to your Vagrant file
 Configure the db machine with a different IP from the app
 Provision the db machine with a MongoDB database
-In Vagrantfile
+In Vagrantfile:
+First version
 ```
 Vagrant.configure("2") do |config|
   config.vm.define "app" do |app|
