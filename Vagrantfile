@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     app.vm.network "private_network", ip: "192.168.10.101"
     app.hostsupdater.aliases = ["db.local"]
     # it allows us to access directly the virtual machine with the db or app we want
-    app.vm.provision "shell", path: "environment/db/provision.sh"
+    app.vm.provision "shell", path: "environment/db/provision.sh", privileged: false
   end
 
 end

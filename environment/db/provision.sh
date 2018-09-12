@@ -24,6 +24,9 @@ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" 
 sudo apt-get update -y
 sudo apt-get install mongodb-org=3.2.20 -y
 sudo systemctl start mongod
+# Systemd provides a standard process for controlling what programs run when a Linux system boots up.
+# systemd gives us the systemctl command which is mostly used to enable services to start at boot time.
 sudo systemctl enable mongod
 sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+# gets into that file, replace 01 by 0, to comply with the tests., which port to look
 sudo systemctl restart mongod.service
