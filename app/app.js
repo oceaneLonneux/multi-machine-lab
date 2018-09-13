@@ -1,23 +1,20 @@
+// which package we need
 var express = require('express');
 var app = express();
 var exec = require('child_process').exec;
 var mongoose = require('mongoose');
 var Post = require('./models/post');
-
 app.set('view engine' , 'ejs');
-
 app.use(express.static('public'));
-
 app.get('/' , function(req , res){
-
   res.render("index");
-
 });
 
 // connect to database
 if(process.env.DB_HOST) {
+  // looking for variable called DB_HOST
   mongoose.connect(process.env.DB_HOST);
-
+  // manage data for mongo (Active record, postgres)
   app.get("/posts" , function(req,res){
       Post.find({} , function(err, posts){
         if(err) return res.send(err);

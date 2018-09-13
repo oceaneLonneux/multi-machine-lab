@@ -21,3 +21,6 @@ sudo apt-get install nodejs -y
 sudo npm install pm2 -g
 
 # We dont need to put mongo as app doesn't deal with database
+
+# echo 'export DB_HOST=192.168.10.101' >> ~/.bashrc
+# source ~/.bashrc
